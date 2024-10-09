@@ -13,10 +13,10 @@ public class Partecipation {
     @GeneratedValue
     private UUID id;
     @ManyToOne
-    @JoinColumn(name = "person_id")
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
     @ManyToOne
-    @JoinColumn(name = "event_id")
+    @JoinColumn(name = "event_id", nullable = false)
     private Event event;
     @Column(nullable = false)
     private PartecipationStates state;
@@ -59,5 +59,15 @@ public class Partecipation {
 
     public void setState(PartecipationStates state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Partecipation{" +
+                "id=" + id +
+                ", person=" + person +
+                ", event=" + event +
+                ", state=" + state +
+                '}';
     }
 }

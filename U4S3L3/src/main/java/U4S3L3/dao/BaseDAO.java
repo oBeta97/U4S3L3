@@ -26,7 +26,7 @@ public class BaseDAO {
     }
 
 
-    public <T> T getEventById (Class<T> entityClass, String id) throws Exception {
+    public <T> T getObjectById(Class<T> entityClass, String id) throws Exception {
 
         T found = entityManager.find(entityClass, UUID.fromString(id));
         if (found == null) throw new Exception("Evento non trovato");
@@ -35,7 +35,7 @@ public class BaseDAO {
     }
 
     public <T> void delete (Class<T> entityClass, String  id) throws Exception {
-        T obj = this.getEventById(entityClass, id);
+        T obj = this.getObjectById(entityClass, id);
 
         EntityTransaction t = entityManager.getTransaction();
 

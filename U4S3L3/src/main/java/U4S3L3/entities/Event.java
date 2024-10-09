@@ -23,7 +23,7 @@ public class Event {
     @Column(nullable = false, name = "nr_max_partecipants")
     private int nrMaxPartecipants;
     @ManyToOne
-    @JoinColumn(name = "location_id")
+    @JoinColumn(name = "location_id", nullable = false)
     private Location location;
 
     public Event() {}
@@ -91,5 +91,18 @@ public class Event {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", eventDt=" + eventDt +
+                ", description='" + description + '\'' +
+                ", eventType=" + eventType +
+                ", nrMaxPartecipants=" + nrMaxPartecipants +
+                ", location=" + location +
+                '}';
     }
 }

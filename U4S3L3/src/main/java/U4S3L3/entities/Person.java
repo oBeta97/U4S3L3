@@ -77,4 +77,16 @@ public class Person {
     public void setGender(Genders gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                ", gender=" + gender +
+                '}';
+    }
 }
